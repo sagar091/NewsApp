@@ -1,0 +1,28 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable baseline_watch_later_24
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable image
+id edtSearch
+id fabSaveArticle
+id imgNews
+id rvNews
+id txtLoading
+id txtNewsContent
+id txtNewsTime
+id txtNewsTitle
+id txtReadMore
+layout activity_main
+layout activity_news_details
+layout item_news
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string read_more
+style Base.Theme.NewsApp
+style Theme.NewsApp
+xml backup_rules
+xml data_extraction_rules
