@@ -3,13 +3,19 @@ package com.example.newsapp.ui
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.example.newsapp.R
 import com.example.newsapp.adapter.NewsAdapter
+import com.example.newsapp.data.NetworkResult
 import com.example.newsapp.databinding.ActivityMainBinding
 import com.example.newsapp.utility.PrefUtils
+import com.example.newsapp.utility.Utility
+import com.example.newsapp.utility.extensions.getValue
+import com.example.newsapp.utility.loader.ProgressUtils
 import com.example.newsapp.utility.onDone
 import com.example.newsapp.viewmodel.MainViewModel
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -43,121 +49,54 @@ class MainActivity : AppCompatActivity() {
 
         if (PrefUtils.contains(this, PrefUtils.SEARCH)) {
             binding.edtSearch.setText(PrefUtils.getStringValue(this, PrefUtils.SEARCH))
-            viewModel.getArticles(binding.edtSearch.text.toString().trim())
-
-            /*viewModel.getNewArticles(binding.edtSearch.text.toString().trim()).observe(this) {
-                if (it != null) {
-                    if (it.isNotEmpty()) {
-                        binding.txtLoading.visibility = View.GONE
-                        adapter.setData(it)
-                    } else {
-                        binding.txtLoading.text = "No Data"
-                        binding.txtLoading.visibility = View.VISIBLE
-                        adapter.clearData()
-                    }
-                }
-            }*/
+            viewModel.getArticles(binding.edtSearch.getValue())
         }
     }
 
     private fun observer() {
-        viewModel.loading.observe(this) {
-            if (it) {
-                binding.txtLoading.visibility = View.VISIBLE
-                binding.txtLoading.text = "Loading.."
-            } else {
-                binding.txtLoading.visibility = View.GONE
-            }
-        }
 
-        viewModel.errorMessage.observe(this) {
-            if (it.isNullOrEmpty()) {
-                binding.txtLoading.visibility = View.GONE
-            } else {
-                binding.txtLoading.visibility = View.VISIBLE
-                binding.txtLoading.text = it
-                adapter.clearData()
-            }
-        }
-
-        viewModel.noInternetMsg.observe(this) {
-            if (it) {
-                binding.txtLoading.visibility = View.VISIBLE
-                binding.txtLoading.text = "No internet"
-            } else {
-                binding.txtLoading.visibility = View.GONE
-            }
-        }
-
-        //region Way-1
-        /*
-        * In case of livedata, use below observable
-        * */
-        /*viewModel.articles.observe(this) {
-            if (!it.isNullOrEmpty()) {
-                binding.txtLoading.visibility = View.GONE
-                adapter.setData(it)
-            } else {
-                binding.txtLoading.text = "No Data"
-                binding.txtLoading.visibility = View.VISIBLE
-                adapter.clearData()
-            }
-        }*/
-        //endregion
-
-        //region Way-2
-        /*
-        * In case of State Flow, use below flow collection
-        * */
-        /*lifecycleScope.launch {
-            viewModel.articlesStateFlow.collectLatest {
-                if (it.isNotEmpty()) {
-                    binding.txtLoading.visibility = View.GONE
-                    adapter.setData(it)
-                } else {
-                    binding.txtLoading.text = "No Data"
-                    binding.txtLoading.visibility = View.VISIBLE
-                    adapter.clearData()
-                }
-            }
-        }*/
-        //endregion
-
-        //region Way-3
-        /*
-        * In case of Shared Flow, use below flow collection
-        * */
-        /*lifecycleScope.launch {
-            viewModel.articlesSharedFlow.collectLatest {
-                if (it.isNotEmpty()) {
-                    binding.txtLoading.visibility = View.GONE
-                    adapter.setData(it)
-                } else {
-                    binding.txtLoading.text = "No Data"
-                    binding.txtLoading.visibility = View.VISIBLE
-                    adapter.clearData()
-                }
-            }
-        }*/
-        //endregion
-
-        //region Way-4
-        /*
-        * In case of Shared Flow, use below flow collection, an alternate way for way-3
-        * */
         lifecycleScope.launch {
-            viewModel.latestArticles.collectLatest {
-                if (it.isNotEmpty()) {
-                    binding.txtLoading.visibility = View.GONE
-                    adapter.setData(it)
-                } else {
-                    binding.txtLoading.text = "No Data"
-                    binding.txtLoading.visibility = View.VISIBLE
-                    adapter.clearData()
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.articleState.collect { result ->
+                    when (result) {
+                        is NetworkResult.Success -> {
+                            ProgressUtils.hideProgress()
+                            if (!result.data.articles.isNullOrEmpty()) {
+                                PrefUtils.setStringValue(
+                                    this@MainActivity,
+                                    PrefUtils.SEARCH,
+                                    binding.edtSearch.getValue()
+                                )
+                                adapter.setData(result.data.articles)
+                            } else {
+                                adapter.setData(arrayListOf())
+                                binding.emptyView.root.visibility = View.VISIBLE
+                                binding.emptyView.txtEmpty.text = getString(R.string.no_data)
+                            }
+                        }
+
+                        is NetworkResult.Error -> {
+                            binding.emptyView.root.visibility = View.GONE
+                            ProgressUtils.hideProgress()
+                            Utility.showToast(this@MainActivity, result.message)
+                        }
+
+                        is NetworkResult.Loading -> {
+                            binding.emptyView.root.visibility = View.GONE
+                            if (result.isLoading) {
+                                ProgressUtils.showProgress(this@MainActivity)
+                            }
+                        }
+
+                        is NetworkResult.NoInternet -> {
+                            adapter.setData(arrayListOf())
+                            binding.emptyView.root.visibility = View.VISIBLE
+                            ProgressUtils.hideProgress()
+                            binding.emptyView.txtEmpty.text = getString(R.string.no_internet)
+                        }
+                    }
                 }
             }
         }
-        //endregion
-
     }
 }

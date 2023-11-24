@@ -9,6 +9,8 @@ import androidx.databinding.ViewDataBinding;
 import com.example.newsapp.databinding.ActivityMainBindingImpl;
 import com.example.newsapp.databinding.ActivityNewsDetailsBindingImpl;
 import com.example.newsapp.databinding.ItemNewsBindingImpl;
+import com.example.newsapp.databinding.LayoutEmptyViewBindingImpl;
+import com.example.newsapp.databinding.ProgressHudBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -26,12 +28,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ITEMNEWS = 3;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
+  private static final int LAYOUT_LAYOUTEMPTYVIEW = 4;
+
+  private static final int LAYOUT_PROGRESSHUD = 5;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.newsapp.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.newsapp.R.layout.activity_news_details, LAYOUT_ACTIVITYNEWSDETAILS);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.newsapp.R.layout.item_news, LAYOUT_ITEMNEWS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.newsapp.R.layout.layout_empty_view, LAYOUT_LAYOUTEMPTYVIEW);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.newsapp.R.layout.progress_hud, LAYOUT_PROGRESSHUD);
   }
 
   @Override
@@ -60,6 +68,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ItemNewsBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for item_news is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTEMPTYVIEW: {
+          if ("layout/layout_empty_view_0".equals(tag)) {
+            return new LayoutEmptyViewBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_empty_view is invalid. Received: " + tag);
+        }
+        case  LAYOUT_PROGRESSHUD: {
+          if ("layout/progress_hud_0".equals(tag)) {
+            return new ProgressHudBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for progress_hud is invalid. Received: " + tag);
         }
       }
     }
@@ -115,12 +135,14 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
 
     static {
       sKeys.put("layout/activity_main_0", com.example.newsapp.R.layout.activity_main);
       sKeys.put("layout/activity_news_details_0", com.example.newsapp.R.layout.activity_news_details);
       sKeys.put("layout/item_news_0", com.example.newsapp.R.layout.item_news);
+      sKeys.put("layout/layout_empty_view_0", com.example.newsapp.R.layout.layout_empty_view);
+      sKeys.put("layout/progress_hud_0", com.example.newsapp.R.layout.progress_hud);
     }
   }
 }

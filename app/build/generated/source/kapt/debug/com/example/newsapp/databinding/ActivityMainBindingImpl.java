@@ -12,10 +12,13 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     @Nullable
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
-        sIncludes = null;
+        sIncludes = new androidx.databinding.ViewDataBinding.IncludedLayouts(4);
+        sIncludes.setIncludes(0, 
+            new String[] {"layout_empty_view"},
+            new int[] {1},
+            new int[] {com.example.newsapp.R.layout.layout_empty_view});
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.edtSearch, 1);
-        sViewsWithIds.put(R.id.txtLoading, 2);
+        sViewsWithIds.put(R.id.edtSearch, 2);
         sViewsWithIds.put(R.id.rvNews, 3);
     }
     // views
@@ -30,11 +33,12 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatEditText) bindings[1]
+        super(bindingComponent, root, 1
+            , (androidx.appcompat.widget.AppCompatEditText) bindings[2]
+            , (com.example.newsapp.databinding.LayoutEmptyViewBinding) bindings[1]
             , (androidx.recyclerview.widget.RecyclerView) bindings[3]
-            , (androidx.appcompat.widget.AppCompatTextView) bindings[2]
             );
+        setContainedBinding(this.emptyView);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -45,8 +49,9 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
+        emptyView.invalidateAll();
         requestRebind();
     }
 
@@ -56,6 +61,9 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             if (mDirtyFlags != 0) {
                 return true;
             }
+        }
+        if (emptyView.hasPendingBindings()) {
+            return true;
         }
         return false;
     }
@@ -67,8 +75,25 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     }
 
     @Override
+    public void setLifecycleOwner(@Nullable androidx.lifecycle.LifecycleOwner lifecycleOwner) {
+        super.setLifecycleOwner(lifecycleOwner);
+        emptyView.setLifecycleOwner(lifecycleOwner);
+    }
+
+    @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
+            case 0 :
+                return onChangeEmptyView((com.example.newsapp.databinding.LayoutEmptyViewBinding) object, fieldId);
+        }
+        return false;
+    }
+    private boolean onChangeEmptyView(com.example.newsapp.databinding.LayoutEmptyViewBinding EmptyView, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
         }
         return false;
     }
@@ -81,13 +106,15 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
             mDirtyFlags = 0;
         }
         // batch finished
+        executeBindingsOn(emptyView);
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): emptyView
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

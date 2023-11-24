@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,17 +19,17 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final AppCompatEditText edtSearch;
 
   @NonNull
-  public final RecyclerView rvNews;
+  public final LayoutEmptyViewBinding emptyView;
 
   @NonNull
-  public final AppCompatTextView txtLoading;
+  public final RecyclerView rvNews;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatEditText edtSearch, RecyclerView rvNews, AppCompatTextView txtLoading) {
+      AppCompatEditText edtSearch, LayoutEmptyViewBinding emptyView, RecyclerView rvNews) {
     super(_bindingComponent, _root, _localFieldCount);
     this.edtSearch = edtSearch;
+    this.emptyView = emptyView;
     this.rvNews = rvNews;
-    this.txtLoading = txtLoading;
   }
 
   @NonNull

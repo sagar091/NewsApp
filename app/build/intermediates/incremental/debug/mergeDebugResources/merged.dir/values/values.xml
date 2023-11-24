@@ -634,6 +634,7 @@
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
     <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+    <color name="app_color">#0059C7</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -653,6 +654,7 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="cloudy_blue">#b7bfcb</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_dark_default_color_background">#121212</color>
     <color name="design_dark_default_color_error">#CF6679</color>
@@ -692,6 +694,8 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="divider">#A4ABC0</color>
+    <color name="empty_view">#8A96A4</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
@@ -927,6 +931,8 @@
     <color name="material_personalized_color_text_primary_inverse_disable_only">#FFFFFF</color>
     <color name="material_personalized_color_text_secondary_and_tertiary_inverse">#FFFFFF</color>
     <color name="material_personalized_color_text_secondary_and_tertiary_inverse_disabled">#FFFFFF</color>
+    <color name="menu_disable">#01213A</color>
+    <color name="menu_enable">#0059C7</color>
     <color name="mtrl_btn_text_color_disabled">#61000000</color>
     <color name="mtrl_btn_transparent_bg_color">#00ffffff</color>
     <color name="mtrl_scrim_color">#52000000</color>
@@ -945,6 +951,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="red">#ff0000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -958,6 +965,8 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="BUTTON_HEIGHT">52dp</dimen>
+    <dimen name="SMALL_BUTTON_HEIGHT">@dimen/dimen_30dp</dimen>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -1040,6 +1049,10 @@
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="appcompat_dialog_background_inset">16dp</dimen>
+    <dimen name="button_corner">16dp</dimen>
+    <dimen name="button_radius">8dp</dimen>
+    <dimen name="button_stroke">1dp</dimen>
+    <dimen name="button_text">16sp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -1100,11 +1113,78 @@
     <dimen name="design_tab_text_size">14sp</dimen>
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <dimen name="design_textinput_caption_translate_y">5dp</dimen>
+    <dimen name="dimen_.5dp" ns1:ignore="MissingDefaultResource">0.5dp</dimen>
+    <dimen name="dimen_0dp">0dp</dimen>
+    <dimen name="dimen_1.5dp">1.5dp</dimen>
+    <dimen name="dimen_102dp">102dp</dimen>
+    <dimen name="dimen_108dp">108dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_112dp">112dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_128dp">128dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_136dp">136dp</dimen>
+    <dimen name="dimen_140dp">140dp</dimen>
+    <dimen name="dimen_142dp">142dp</dimen>
+    <dimen name="dimen_146dp">146dp</dimen>
+    <dimen name="dimen_14dp">14dp</dimen>
+    <dimen name="dimen_156dp">156dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_172dp">172dp</dimen>
+    <dimen name="dimen_184dp">184dp</dimen>
+    <dimen name="dimen_18dp">18dp</dimen>
+    <dimen name="dimen_196dp">196dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_216dp">216dp</dimen>
+    <dimen name="dimen_22dp">22dp</dimen>
+    <dimen name="dimen_236dp">236dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_256dp">256dp</dimen>
+    <dimen name="dimen_25dp">25dp</dimen>
+    <dimen name="dimen_26dp">26dp</dimen>
+    <dimen name="dimen_272dp">272dp</dimen>
+    <dimen name="dimen_28dp">28dp</dimen>
+    <dimen name="dimen_296dp">296dp</dimen>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_328dp">328dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_34dp">34dp</dimen>
+    <dimen name="dimen_36dp">36dp</dimen>
+    <dimen name="dimen_38dp">38dp</dimen>
+    <dimen name="dimen_3dp">3dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_42dp">42dp</dimen>
+    <dimen name="dimen_44dp">44dp</dimen>
+    <dimen name="dimen_46dp">46dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_50dp">50dp</dimen>
+    <dimen name="dimen_512dp">512dp</dimen>
+    <dimen name="dimen_52dp">52dp</dimen>
+    <dimen name="dimen_54dp">54dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_58dp">58dp</dimen>
+    <dimen name="dimen_60dp">60dp</dimen>
+    <dimen name="dimen_62dp">62dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_6dp">6dp</dimen>
+    <dimen name="dimen_72dp">72dp</dimen>
+    <dimen name="dimen_80dp">80dp</dimen>
+    <dimen name="dimen_84dp">84dp</dimen>
+    <dimen name="dimen_86dp">86dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_92dp">92dp</dimen>
+    <dimen name="dimen_96dp">96dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="empty_text_size">26sp</dimen>
+    <dimen name="extra_large_text">22sp</dimen>
     <dimen name="fastscroll_default_thickness">8dp</dimen>
     <dimen name="fastscroll_margin">0dp</dimen>
     <dimen name="fastscroll_minimum_range">50dp</dimen>
+    <dimen name="header_text">20sp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -1112,9 +1192,18 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <dimen name="inputFieldHeight">52dp</dimen>
+    <dimen name="input_text">14sp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="item_width">200dp</dimen>
+    <dimen name="label_text">14sp</dimen>
+    <dimen name="labeled_default_height">32dp</dimen>
+    <dimen name="labeled_default_width">72dp</dimen>
+    <dimen name="large_text">18sp</dimen>
+    <dimen name="line_spacing">4sp</dimen>
+    <dimen name="login_text">34sp</dimen>
     <dimen name="m3_alert_dialog_action_bottom_padding">14dp</dimen>
     <dimen name="m3_alert_dialog_action_top_padding">14dp</dimen>
     <dimen name="m3_alert_dialog_corner_size">28dp</dimen>
@@ -1533,6 +1622,7 @@
     <dimen name="material_time_picker_minimum_screen_height">560dp</dimen>
     <dimen name="material_time_picker_minimum_screen_width">340dp</dimen>
     <dimen name="material_timepicker_dialog_buttons_margin_top">24dp</dimen>
+    <dimen name="medium_text">16sp</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_bottom">80dp</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_end">24dp</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_start">24dp</dimen>
@@ -1745,6 +1835,40 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="padding_item_width">300dp</dimen>
+    <dimen name="regular_text">14sp</dimen>
+    <dimen name="small_button_text">14sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp26">26sp</dimen>
+    <dimen name="sp28">28sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <dimen name="sp32">32sp</dimen>
+    <dimen name="sp34">34sp</dimen>
+    <dimen name="sp36">36sp</dimen>
+    <dimen name="sp38">38sp</dimen>
+    <dimen name="sp40">40sp</dimen>
+    <dimen name="sp42">42sp</dimen>
+    <dimen name="sp44">44sp</dimen>
+    <dimen name="sp46">46sp</dimen>
+    <dimen name="sp48">48sp</dimen>
+    <dimen name="sp50">50sp</dimen>
+    <dimen name="sp52">52sp</dimen>
+    <dimen name="sp54">54sp</dimen>
+    <dimen name="sp56">56sp</dimen>
+    <dimen name="sp58">58sp</dimen>
+    <dimen name="sp60">60sp</dimen>
+    <dimen name="sp62">62sp</dimen>
+    <dimen name="sp64">64sp</dimen>
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="splash_text">40sp</dimen>
+    <dimen name="tiny_small_text">10sp</dimen>
+    <dimen name="title_text">24sp</dimen>
+    <dimen name="toolbar_title_text_size">22sp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -1753,6 +1877,13 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <dimen name="very_small_text">12sp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">36dp</dimen>
+    <dimen name="viewpager_next_item_visible">20dp</dimen>
+    <dimen name="xl_text">20sp</dimen>
+    <dimen name="xxl_text">22sp</dimen>
+    <dimen name="xxxl_text">24sp</dimen>
+    <dimen name="xxxxl_text">26sp</dimen>
     <item name="material_ic_keyboard_arrow_next_black_24dp" type="drawable">@drawable/material_ic_keyboard_arrow_right_black_24dp</item>
     <item name="material_ic_keyboard_arrow_previous_black_24dp" type="drawable">@drawable/material_ic_keyboard_arrow_left_black_24dp</item>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
@@ -1999,6 +2130,7 @@
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="label_loading">Loading..</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
     <string name="m3_ref_typeface_brand_regular" translatable="false">sans-serif</string>
@@ -2105,6 +2237,8 @@
     <string name="mtrl_switch_track_path" translatable="false">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
     <string description="Button text to indicate that the widget will ignore the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_cancel">Cancel</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
+    <string name="no_data">No data found!</string>
+    <string name="no_internet">No Internet Connection</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -2120,6 +2254,7 @@
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="try_again">Something went wrong. Please try again</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -2549,6 +2684,10 @@
     <style name="Base.Theme.NewsApp" parent="Theme.Material3.Light.NoActionBar">
         
         
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="editTextStyle">@style/BoxEditTextStyle</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+
     </style>
     <style name="Base.ThemeOverlay.AppCompat" parent="Platform.ThemeOverlay.AppCompat"/>
     <style name="Base.ThemeOverlay.AppCompat.ActionBar">
@@ -5521,6 +5660,26 @@
     <item name="shapeAppearanceOverlay">@null</item>
   </style>
     <style name="Base.Widget.MaterialComponents.TextView" parent="Widget.AppCompat.TextView"/>
+    <style name="BottomNavigationViewTextAppearance">
+        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="android:textSize">@dimen/regular_text</item>
+    </style>
+    <style name="BoxEditTextStyle" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">@dimen/BUTTON_HEIGHT</item>
+        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
+        <item name="android:textSize">@dimen/regular_text</item>
+    </style>
+    <style name="ButtonStyle" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_height">@dimen/BUTTON_HEIGHT</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:fontFamily">@font/bold_700</item>
+    </style>
     <style name="CardView" parent="Base.CardView">
     </style>
     <style name="CardView.Dark">
@@ -5787,6 +5946,19 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Holo.Spinner"/>
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="android:textSize">@dimen/regular_text</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -6520,6 +6692,8 @@
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>
+    <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="Theme.NewsApp" parent="Base.Theme.NewsApp"/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
@@ -7073,6 +7247,10 @@
     <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
     <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
   </style>
+    <style name="ToolbarTextViewStyle">
+        <item name="android:fontFamily">@font/bold_700</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">

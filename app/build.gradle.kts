@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-parcelize")
     id("kotlin-android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -83,6 +84,6 @@ dependencies {
     val roomVersion = "2.6.0"
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
     //endregion
 }

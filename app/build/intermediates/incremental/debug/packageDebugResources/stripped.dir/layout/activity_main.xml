@@ -19,28 +19,20 @@
             android:singleLine="true"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtLoading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Loading.."
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvNews"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtLoading"
+            app:layout_constraintTop_toBottomOf="@+id/edtSearch"
             tools:itemCount="5"
             tools:listitem="@layout/item_news" />
+
+        <include
+            android:id="@+id/emptyView"
+            layout="@layout/layout_empty_view"
+            android:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
          

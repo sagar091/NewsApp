@@ -4,7 +4,8 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.example.newsapp.BuildConfig
-import com.example.newsapp.api.ApiService
+import com.example.newsapp.data.DataRepository
+import com.example.newsapp.data.api.ApiService
 import com.example.newsapp.room.ArticleDao
 import com.example.newsapp.room.ArticleDatabase
 import okhttp3.OkHttpClient
@@ -21,6 +22,7 @@ val appModule = module {
     single { provideApiService(get()) }
     single { provideDatabase(get()) }
     single { provideDao(get()) }
+    single { provideDataRepository(get(), get()) }
 }
 
 private fun provideOkHttpClient(context: Context) = run {
@@ -79,7 +81,9 @@ private fun provideApiService(retrofit: Retrofit): ApiService =
 
 private fun provideDatabase(context: Application): ArticleDatabase =
     Room.databaseBuilder(context, ArticleDatabase::class.java, "articles")
-        //.fallbackToDestructiveMigration()
-        .build()
+        .fallbackToDestructiveMigration().build()
 
 private fun provideDao(db: ArticleDatabase): ArticleDao = db.getArticleDao()
+
+private fun provideDataRepository(context: Context, apiService: ApiService): DataRepository =
+    DataRepository(context, apiService)

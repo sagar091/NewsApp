@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="app_color">#0059C7</color>
+
+    <color name="divider">#A4ABC0</color>
+    <color name="menu_disable">#01213A</color>
+    <color name="menu_enable">#0059C7</color>
+    <color name="cloudy_blue">#b7bfcb</color>
+    <color name="empty_view">#8A96A4</color>
+    <color name="red">#ff0000</color>
 </resources>

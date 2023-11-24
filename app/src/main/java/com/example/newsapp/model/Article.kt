@@ -16,10 +16,4 @@ data class Article(
     val url: String,
     val publishedAt: String,
     val author: String
-    // val source: Source,
-) : Parcelable
-
-@Parcelize
-data class Source(
-    val name: String
 ) : Parcelable
