@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.newsapp-mergeDebugResources-44:/values/values.xml",
+            "outputFile": "com.example.newsapp-mergeDebugResources-46:/values/values.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\222e4167b52a728c62eb3157a167ac7b\\transformed\\recyclerview-1.1.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,111,170,218,274,349,425,497,563",
-                        "endLines": "2,3,4,5,6,7,8,9,38",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "106,165,213,269,344,420,492,558,2084"
-                    },
-                    "to": {
-                        "startLines": "506,1183,1184,1185,1196,1197,1198,1933,12758",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "25621,69511,69570,69618,70418,70493,70569,125727,770056",
-                        "endLines": "506,1183,1184,1185,1196,1197,1198,1933,12778",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "25672,69565,69613,69669,70488,70564,70636,125788,770891"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\57d3a769c0756c41ea9baf9fea1ed634\\transformed\\glide-4.14.2\\res\\values\\values.xml",
                     "from": {
@@ -54,6 +35,25 @@
                         "startOffsets": "129242",
                         "endColumns": "49",
                         "endOffsets": "129287"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\70a994c93f2eea3d2d3372bb34ff0307\\transformed\\recyclerview-1.2.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,111,170,218,274,349,425,497,563",
+                        "endLines": "2,3,4,5,6,7,8,9,38",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "106,165,213,269,344,420,492,558,2084"
+                    },
+                    "to": {
+                        "startLines": "506,1183,1184,1185,1196,1197,1198,1933,12758",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "25621,69511,69570,69618,70418,70493,70569,125727,770056",
+                        "endLines": "506,1183,1184,1185,1196,1197,1198,1933,12778",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "25672,69565,69613,69669,70488,70564,70636,125788,770891"
                     }
                 },
                 {

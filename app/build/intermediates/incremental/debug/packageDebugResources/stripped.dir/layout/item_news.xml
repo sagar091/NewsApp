@@ -12,16 +12,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
         android:animateLayoutChanges="true"
         android:padding="8dp" android:tag="layout/item_news_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgNews"
-            android:layout_width="128dp"
-            android:layout_height="116dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:scaleType="centerCrop"
             android:tag="binding_1"           
             app:layout_constraintStart_toStartOf="parent"

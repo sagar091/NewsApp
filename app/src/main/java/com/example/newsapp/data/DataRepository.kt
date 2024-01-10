@@ -1,8 +1,12 @@
 package com.example.newsapp.data
 
 import android.content.Context
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.liveData
 import com.example.newsapp.R
 import com.example.newsapp.data.api.ApiService
+import com.example.newsapp.paging.NewsDataSource
 import com.example.newsapp.utility.Utility
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
@@ -56,4 +60,10 @@ class DataRepository(private val context: Context, private val apiService: ApiSe
         }
 
     }.flowOn(Dispatchers.IO)
+
+    fun getPagingData(query: String) = Pager(
+        config = PagingConfig(pageSize = 20, maxSize = 60),
+        pagingSourceFactory = { NewsDataSource(apiService, query, API_KEY) }
+    ).flow
+
 }

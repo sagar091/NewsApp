@@ -10,7 +10,17 @@ interface ApiService {
     @GET("everything")
     suspend fun getArticles(
         @Query("q") query: String,
-        @Query("apiKey") apiKey: String
+        @Query("apiKey") apiKey: String,
+        @Query("page") page: String = "1",
+        @Query("pageSize") pageSize: Int = 20
     ): Response<ArticleListResponse>
+
+    @GET("everything")
+    suspend fun getPaging(
+        @Query("q") query: String,
+        @Query("apiKey") apiKey: String,
+        @Query("page") page: Int,
+        @Query("pageSize") pageSize: Int = 20
+    ): ArticleListResponse
 
 }

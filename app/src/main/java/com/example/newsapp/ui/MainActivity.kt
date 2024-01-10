@@ -1,13 +1,17 @@
 package com.example.newsapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.paging.LoadState
 import com.example.newsapp.R
 import com.example.newsapp.adapter.NewsAdapter
+import com.example.newsapp.adapter.NewsPagingAdapter
 import com.example.newsapp.data.NetworkResult
 import com.example.newsapp.databinding.ActivityMainBinding
 import com.example.newsapp.utility.PrefUtils
@@ -24,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: NewsAdapter
+    private lateinit var pagingAdapter: NewsPagingAdapter
+
+    final val a=10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +52,43 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         adapter = NewsAdapter(this, arrayListOf())
-        binding.rvNews.adapter = adapter
+        // binding.rvNews.adapter = adapter
+
+        /* if (PrefUtils.contains(this, PrefUtils.SEARCH)) {
+             binding.edtSearch.setText(PrefUtils.getStringValue(this, PrefUtils.SEARCH))
+             viewModel.getArticles(binding.edtSearch.getValue())
+         }*/
+
+        pagingAdapter = NewsPagingAdapter(this)
+        binding.rvNews.adapter = pagingAdapter
+
+        pagingAdapter.addLoadStateListener { loadState ->
+            if (loadState.refresh is LoadState.Loading) {
+                ProgressUtils.showProgress(this)
+            } else {
+                ProgressUtils.hideProgress()
+                val error = when {
+                    loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
+                    loadState.append is LoadState.Error -> loadState.append as LoadState.Error
+                    loadState.refresh is LoadState.Error -> loadState.refresh as LoadState.Error
+                    else -> null
+                }
+                error?.let {
+                    if (pagingAdapter.itemCount == 0) {
+                        Toast.makeText(this, it.error.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
 
         if (PrefUtils.contains(this, PrefUtils.SEARCH)) {
             binding.edtSearch.setText(PrefUtils.getStringValue(this, PrefUtils.SEARCH))
-            viewModel.getArticles(binding.edtSearch.getValue())
+
+            lifecycleScope.launch {
+                viewModel.getPagingData(binding.edtSearch.getValue()).collect {
+                    pagingAdapter.submitData(lifecycle, it)
+                }
+            }
         }
     }
 
@@ -62,6 +101,8 @@ class MainActivity : AppCompatActivity() {
                         is NetworkResult.Success -> {
                             ProgressUtils.hideProgress()
                             if (!result.data.articles.isNullOrEmpty()) {
+                                Log.e("Size_Total", result.data.totalResults.toString())
+                                Log.e("Size_Load", result.data.articles.size.toString())
                                 PrefUtils.setStringValue(
                                     this@MainActivity,
                                     PrefUtils.SEARCH,

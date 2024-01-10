@@ -1,22 +1,22 @@
 [
     {
-        "merged": "com.example.newsapp-mergeDebugResources-45:/layout/activity_news_details.xml",
-        "source": "com.example.newsapp-main-48:/layout/activity_news_details.xml"
+        "merged": "com.example.newsapp-mergeDebugResources-47:/layout/activity_news_details.xml",
+        "source": "com.example.newsapp-main-50:/layout/activity_news_details.xml"
     },
     {
-        "merged": "com.example.newsapp-mergeDebugResources-45:/layout/item_news.xml",
-        "source": "com.example.newsapp-main-48:/layout/item_news.xml"
+        "merged": "com.example.newsapp-mergeDebugResources-47:/layout/item_news.xml",
+        "source": "com.example.newsapp-main-50:/layout/item_news.xml"
     },
     {
-        "merged": "com.example.newsapp-mergeDebugResources-45:/layout/progress_hud.xml",
-        "source": "com.example.newsapp-main-48:/layout/progress_hud.xml"
+        "merged": "com.example.newsapp-mergeDebugResources-47:/layout/layout_empty_view.xml",
+        "source": "com.example.newsapp-main-50:/layout/layout_empty_view.xml"
     },
     {
-        "merged": "com.example.newsapp-mergeDebugResources-45:/layout/layout_empty_view.xml",
-        "source": "com.example.newsapp-main-48:/layout/layout_empty_view.xml"
+        "merged": "com.example.newsapp-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.example.newsapp-main-50:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.newsapp-mergeDebugResources-45:/layout/activity_main.xml",
-        "source": "com.example.newsapp-main-48:/layout/activity_main.xml"
+        "merged": "com.example.newsapp-mergeDebugResources-47:/layout/progress_hud.xml",
+        "source": "com.example.newsapp-main-50:/layout/progress_hud.xml"
     }
 ]

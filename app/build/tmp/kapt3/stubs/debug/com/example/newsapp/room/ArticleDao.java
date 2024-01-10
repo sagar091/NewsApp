@@ -4,7 +4,7 @@ package com.example.newsapp.room;
 @androidx.room.Dao
 public abstract interface ArticleDao {
     
-    @androidx.room.Insert
+    @androidx.room.Insert(onConflict = 1)
     @org.jetbrains.annotations.Nullable
     public abstract java.lang.Object insert(@org.jetbrains.annotations.NotNull
     com.example.newsapp.model.Article article, @org.jetbrains.annotations.NotNull

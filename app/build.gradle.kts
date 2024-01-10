@@ -86,4 +86,7 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
     //endregion
+
+    val pagingVersion = "3.2.1"
+    implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")
 }

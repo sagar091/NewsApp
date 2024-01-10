@@ -8,12 +8,15 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity(tableName = "article")
 data class Article(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey
     val title: String,
     val description: String?,
     val urlToImage: String,
     val url: String,
     val publishedAt: String,
     val author: String
-) : Parcelable
+) : Parcelable {
+    override fun toString(): String {
+        return title
+    }
+}
